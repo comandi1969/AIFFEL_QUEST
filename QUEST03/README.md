@@ -1,78 +1,47 @@
 d# AIFFEL Campus Online 4th Code Peer Review Templete
-- 코더 : 이규상
-- 리뷰어 : 이윤상
+- 코더 : 이윤상
+- 리뷰어 : 이규상
 
 
 # PRT(PeerReviewTemplate) 
 각 항목을 스스로 확인하고 토의하여 작성한 코드에 적용합니다.
 
-- [X] 코드가 정상적으로 동작하고 주어진 문제를 해결했나요?
-  
+- [ ] 코드가 정상적으로 동작하고 주어진 문제를 해결했나요?
+  > 코드는 적상적으로 작동을 하지만 주어진 문제는 해결하지 못 했다.
 - [X] 주석을 보고 작성자의 코드가 이해되었나요?
-  > 지정된 변수나 명령어 마다 주석이 달려있어 이해하기 쉬웠습니다.
+  > 함수를 여러개 만들고 해당 함수가 무슨 역활을 하는지 주석을 달았다.
 - [X] 코드가 에러를 유발할 가능성이 없나요?
-  > 논리적으로 문제가 없어 텍스트파일이 바뀌어도 에러를 유발할 가능성은 없어보입니다.
-- [X] 코드 작성자가 코드를 제대로 이해하고 작성했나요?
-  > 잘 이해하고 작성했다고 생각합니다. 코드의 여러 부분에 근거를 들어가면서 설명하였습니다.
+  >다른 파일로 바뀌어도 똑같은 방식으로 출력될것 같다. 오류가 없다.
+- [ ] 코드 작성자가 코드를 제대로 이해하고 작성했나요?
+  > 몇가지는 제대로 이해하셨지만 몇가지는 이해를 못하시고 작성하신것 같다. 함수 split_space같은 경우에 공백을 제거만 할 경우 원하는 값을 구하지 못하기 때문에 이부분은 제대로 이해하지 못했다고 생각한다.
 - [X] 코드가 간결한가요?
-  > 짧고 간결하게 작성했다고 생각합니다. 코드의 전체적인 길이가 짧고 알아보기 쉬웠습니다.
+  > 함수를 사용해서 본문은 간결하게 표현을 하셨다.
 
 # 예시
-import re
-from google.colab import drive
-from collections import Counter
+1. 코드의 작동 방식을 주석으로 기록합니다.
+2. 코드의 작동 방식에 대한 개선 방법을 주석으로 기록합니다.
+3. 참고한 링크 및 ChatGPT 프롬프트 명령어가 있다면 주석으로 남겨주세요.
+```python
+# 사칙 연산 계산기
+class calculator:
+    # 예) init의 역할과 각 매서드의 의미를 서술
+    def __init__(self, first, second):
+        self.first = first
+        self.second = second
+    
+    # 예) 덧셈과 연산 작동 방식에 대한 서술
+    def add(self):
+        result = self.first + self.second
+        return result
 
-drive.mount('/content/drive')
-
-def remove_symbols(text):
-    cleaned_text = re.sub(r'[^\w\s]', ' ', text)  # 정규표현식 패턴을 사용하여 기호를 제거하고 ' '대체합니다.
-    cleaned_text = cleaned_text.replace('\n',' ') #\n을 ' '으로 대체합니다.
-
-    return cleaned_text
-
-file = open('/content/drive/MyDrive/Avengers.txt') #Avengers파일 불러오기
-contents = file.read()
-file.close()
-f = remove_symbols(contents) #기호를 제거한 문자열을 임의의 변수에 저장합니다.
-new_contents = f.lower() #대문자를 소문자로 변환
-
-words = new_contents.split() #word 단위로 나누어 list에 저장
-two_grams = [' '.join(words[i:i+2]) for i in range(len(words)-1)]
-
-ngrams = zip(words, words[1:]) # 2-grams
-
-counter = Counter(ngrams)
-
-most_common = counter.most_common(1)
-print(most_common)
-
+a = float(input('첫번째 값을 입력하세요.')) 
+b = float(input('두번째 값을 입력하세요.')) 
+c = calculator(a, b)
+print('덧셈', c.add()) 
+```
 
 # 참고 링크 및 코드 개선
-import re
-from google.colab import drive
-from collections import Counter
-
-drive.mount('/content/drive')
-
-def remove_symbols(text):
-    cleaned_text = re.sub(r'[^\w\s]', ' ', text)  
-    cleaned_text = cleaned_text.replace('\n',' ') 
-
-    return cleaned_text
-
-file = open('/content/drive/MyDrive/Avengers.txt') 
-contents = file.read()
-file.close()
-f = remove_symbols(contents) 
-new_contents = f.lower() 
-
-words = new_contents.split() 
-two_grams = [' '.join(words[i:i+2]) for i in range(len(words)-1)]                       #two_grams 변수를 지정하고 사용되지 않았습니다.
-
-ngrams = zip(words, words[1:]) # 2-grams
-
-counter = Counter(ngrams)
-
-most_common = counter.most_common(1)
-print(most_common)
-
+```python
+# 코드 리뷰 시 참고한 링크가 있다면 링크와 간략한 설명을 첨부합니다.
+# 코드 리뷰를 통해 개선한 코드가 있다면 코드와 간략한 설명을 첨부합니다.
+```
