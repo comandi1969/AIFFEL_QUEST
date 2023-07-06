@@ -1,4 +1,3 @@
-
 menu = ['americano', 'latte', 'mocha', 'yuza_tea', 'green_tea', 'choco_latte']
 price = [2000, 3000, 3000, 2500, 2500, 3000]
 
