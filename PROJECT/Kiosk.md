@@ -1,4 +1,4 @@
-'''python
+
 menu = ['americano', 'latte', 'mocha', 'yuza_tea', 'green_tea', 'choco_latte']
 price = [2000, 3000, 3000, 2500, 2500, 3000]
 
@@ -109,4 +109,4 @@ a.menu_print()  # 메뉴 출력
 a.menu_select()  # 주문
 a.pay()   #지불
 a.table()   #주문서
-'''
+
